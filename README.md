@@ -42,9 +42,16 @@ Per-method breakdown: [docs/EVAL.md](docs/EVAL.md). The corpus is my own, so tre
 
 ## Quickstart
 
-```sh
-git clone https://github.com/Logan-Cope/prompt-trap-scan && cd prompt-trap-scan && npm ci && npx playwright install chromium && npm test
-```
+Tested on Node 22. After the install steps, no API keys and no network are needed.
+
+1. `git clone https://github.com/Logan-Cope/prompt-trap-scan`
+2. `cd prompt-trap-scan`
+3. `npm ci`
+4. `npx playwright install chromium`
+5. `npm test` runs the unit and site tests.
+6. `npm run eval` prints the detection table above.
+
+If Chromium is missing, steps 5 and 6 stop at once and tell you to run step 4.
 
 Check one page before an agent acts on it:
 

@@ -8,7 +8,7 @@ export const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '
 
 /** Open a browser and return a helper that scans an HTML string. */
 export async function withScanner(fn) {
-  const browser = await chromium.launch();
+  const browser = await chromium.launch({ timeout: 30000 });
   try {
     const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
     const scanHtml = async (html) => {
