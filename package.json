@@ -11,7 +11,7 @@
     "build": "node scripts/build.mjs",
     "eval": "node eval/run.mjs",
     "eval:write": "node eval/run.mjs --write",
-    "test": "node --test test/",
+    "test": "node --test \"test/*.test.mjs\"",
     "serve": "npm run build && npx --no-install serve dist -l 4173",
     "check": "npm run lint && npm run typecheck && npm test"
   },

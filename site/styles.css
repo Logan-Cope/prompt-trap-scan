@@ -17,7 +17,7 @@ h1{font:700 clamp(30px,4.4vw,46px)/1.05 var(--serif);margin:0;letter-spacing:-.0
 .lede{font:18px/1.55 var(--serif);max-width:60ch;margin:10px 0 0;grid-column:1}
 .score{grid-column:2;grid-row:1 / span 2;border-collapse:collapse;width:100%;font-size:15px}
 .score caption{text-align:left;font-size:13px;color:var(--muted);padding-bottom:6px}
-.score th,.score td{white-space:nowrap;padding:8px 10px;border-top:1px solid var(--rule);text-align:left;vertical-align:baseline}
+.score th,.score td{white-space:nowrap;min-width:9ch;padding:8px 10px;border-top:1px solid var(--rule);text-align:left;vertical-align:baseline}
 .score thead th{font-size:13px;font-weight:600;color:var(--muted);border-top:2px solid var(--ink)}
 .score tbody th{font-weight:600}
 .score td{white-space:nowrap;font:600 17px var(--mono)}
@@ -57,9 +57,11 @@ button#scan-paste,.bm{font:600 15px var(--sans);padding:9px 16px;background:var(
 .findings .t{font:13px/1.5 var(--mono);overflow-wrap:anywhere}
 .findings mark{background:var(--mark);color:var(--ink);padding:0 2px}
 .findings .why{grid-column:2;font-size:13px;color:var(--muted)}
+#report,#report-paste{min-height:220px}
 .none{padding:12px 0;color:var(--muted)}
 
 @media (max-width:860px){
+  #index-list{height:260px;overflow:auto;border-bottom:1px solid var(--rule)}
   .top-inner{grid-template-columns:1fr}
   .score{grid-column:1;grid-row:auto;margin-top:16px}
   .work{grid-template-columns:1fr;gap:20px}
