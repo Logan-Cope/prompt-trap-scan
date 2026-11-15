@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>prompt-trap-scan: find text aimed at an AI and hidden from a person</title>
+<meta name="description" content="A dependency-free scanner and a gallery of 24 planted traps. Runs live in your browser.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <h1>prompt-trap-scan</h1>
+    <p class="lede">Some pages carry instructions meant for an AI agent and kept out of a person's sight. This scanner checks every text node on two separate questions: is it addressed to a machine, and can a person see it?</p>
+    <table class="score" aria-live="polite" aria-label="Detection results on the fixture corpus">
+      <caption>Live result on the corpus in this page</caption>
+      <thead><tr><th scope="col">Measure</th><th scope="col">Scanner</th><th scope="col">Naive baseline</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Planted traps found</th><td id="s-found">running</td><td id="s-naive">running</td></tr>
+        <tr><th scope="row">Clean pages wrongly flagged</th><td id="s-false">running</td><td id="s-nfalse">running</td></tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+<main class="work">
+  <nav class="index" aria-label="Specimens">
+    <div id="index-list"></div>
+  </nav>
+
+  <section class="stage" id="stage" aria-live="polite">
+    <div id="pane-specimen">
+      <div class="stage-head">
+        <h2 id="spec-title">Choose a specimen</h2>
+        <label class="toggle"><input type="checkbox" id="hl" checked> Outline findings</label>
+      </div>
+      <p class="caption" id="spec-caption"></p>
+      <iframe id="frame" title="Specimen page" sandbox="allow-same-origin"></iframe>
+      <div id="report"></div>
+    </div>
+
+    <div id="pane-paste" hidden>
+      <h2>Paste HTML</h2>
+      <p class="caption">The page is rendered in a sandbox with scripts off. Nothing leaves your browser.</p>
+      <label for="paste" class="vh">HTML to scan</label>
+      <textarea id="paste" rows="9" spellcheck="false"></textarea>
+      <p><button type="button" id="scan-paste">Scan this HTML</button></p>
+      <iframe id="frame-paste" title="Pasted page" sandbox="allow-same-origin"></iframe>
+      <div id="report-paste"></div>
+    </div>
+
+    <div id="pane-bookmarklet" hidden>
+      <h2>Bookmarklet</h2>
+      <p class="caption">Drag this link to your bookmarks bar, then click it on any page. It outlines what it found and opens a small report. Click it again to clear.</p>
+      <p><a class="bm" id="bm" href="#">Scan for traps</a></p>
+      <p class="caption">It needs no network and works under strict page policies. It reports only; it never edits or answers anything.</p>
+    </div>
+  </section>
+</main>
+
+<iframe id="probe" title="" aria-hidden="true" tabindex="-1" sandbox="allow-same-origin"></iframe>
+<script src="scan.js"></script>
+<script src="highlight.js"></script>
+<script src="eval-core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
