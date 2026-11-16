@@ -1,7 +1,0 @@
-# While the repo is private, its own GitHub URLs, the CI badge and the Pages
-# demo return 404 to anonymous requests. Delete this exclude list when the
-# repo goes public so the check covers them again.
-exclude = [
-  '^https://github\.com/Logan-Cope/prompt-trap-scan',
-  '^https://logan-cope\.github\.io/prompt-trap-scan',
-]
